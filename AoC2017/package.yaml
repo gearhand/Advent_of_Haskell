@@ -1,0 +1,59 @@
+name:                AoC2017
+version:             0.1.0.0
+github:              "gearhand/AoC2017"
+license:             BSD3
+author:              "Igor Stepanenko"
+maintainer:          "igor.stepanenko.93@gmail.com"
+copyright:           "2019 Igor Stepanenko"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/gearhand/AoC2017#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- hspec >= 2.6
+- containers >= 0.6
+- array >= 0.5
+- bytestring >= 0.10
+- attoparsec >= 0.13
+- parsec >= 3.1
+- text
+- word8
+- vector
+- stm
+
+library:
+  source-dirs: src
+
+executables:
+  AoC2017-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+      #- -rtsopts
+      #- -with-rtsopts=-N
+    - -O2
+    dependencies:
+    - AoC2017
+
+tests:
+  AoC2017-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - AoC2017
